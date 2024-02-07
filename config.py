@@ -32,7 +32,7 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://munnabhaiya3699:munna7268
 DB_NAME = os.environ.get("DATABASE_NAME", "SmartSavingsClubDB")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ('FORCE_SUB_CHANNEL', '-1001976708417 -1001824793325').split() if _id and _id.startswith('-100')}
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001976708417 -1001824793325').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
