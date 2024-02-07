@@ -7,11 +7,11 @@ from pyrogram import Client, enums
 from pyrogram.errors import FloodWait
 
 
-async def is_notsubscribed(bot: Client, user_id: int):
+async def is_notsubscribed(client: Client, user_id: int):
     cids = []
     for _id in FORCE_SUB_CHANNEL:
         try:
-            user = await bot.get_chat_member(_id, user_id)
+            user = await client.get_chat_member(_id, user_id)
         except:
             cids.append(_id)
         else:
