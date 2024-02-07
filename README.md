@@ -19,12 +19,12 @@
   </a>
   <a href="https://github.com/CodeXBotz/File-Sharing-Bot/fork">
     <img src="https://img.shields.io/github/forks/CodeXBotz/File-Sharing-Bot?label=Fork&style=social">
-  </a>  
+  </a>
 </p>
 
 
 Telegram Bot to store Posts and Documents and it can Access by Special Links.
-I Guess This Will Be Usefull For Many People.....😇. 
+I Guess This Will Be Usefull For Many People.....😇.
 
 ##
 
@@ -43,7 +43,7 @@ I Guess This Will Be Usefull For Many People.....😇.
 ### Setup
 
 - Add the bot to Database Channel with all permission
-- Add bot to ForceSub channel as Admin with Invite Users via Link Permission if you enabled ForceSub 
+- Add bot to ForceSub channel as Admin with Invite Users via Link Permission if you enabled ForceSub
 
 ##
 ### Installation
@@ -134,10 +134,10 @@ python3 main.py
 * `{uptime}` - Bot Uptime
 
 
-## Support   
-Join Our [Telegram Group](https://www.telegram.dog/codexbotzsupport) For Support/Assistance And Our [Channel](https://www.telegram.dog/codexbotz) For Updates.   
-   
-Report Bugs, Give Feature Requests There..   
+## Support
+Join Our [Telegram Group](https://www.telegram.dog/codexbotzsupport) For Support/Assistance And Our [Channel](https://www.telegram.dog/codexbotz) For Updates.
+
+Report Bugs, Give Feature Requests There..
 
 ### Credits
 
@@ -145,13 +145,13 @@ Report Bugs, Give Feature Requests There..
 - Our Support Group Members
 
 ### Licence
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
 [FILE-SHARING-BOT](https://github.com/CodeXBotz/File-Sharing-Bot/) is Free Software: You can use, study share and improve it at your
 will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
 published by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version. 
+(at your option) any later version.
 
 ##
 

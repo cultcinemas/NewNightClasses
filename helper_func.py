@@ -1,29 +1,24 @@
-#(©)Codexbotz
-
+import asyncio
 import base64
 import re
-import asyncio
-from pyrogram import filters
-from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS
-from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
+
+from config import FORCE_SUB_CHANNEL
+from pyrogram import Client, enums
 from pyrogram.errors import FloodWait
 
-async def is_subscribed(filter, client, update):
-    if not FORCE_SUB_CHANNEL:
-        return True
-    user_id = update.from_user.id
-    if user_id in ADMINS:
-        return True
-    try:
-        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
-    except UserNotParticipant:
-        return False
 
-    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
-        return False
-    else:
-        return True
+async def is_notsubscribed(bot: Client, user_id: int):
+    cids = []
+    for _id in FORCE_SUB_CHANNEL:
+        try:
+            user = await bot.get_chat_member(_id, user_id)
+        except:
+            cids.append(_id)
+        else:
+            if user.status == enums.ChatMemberStatus.BANNED:
+                cids.append(_id)
+    return cids
+
 
 async def encode(string):
     string_bytes = string.encode("ascii")
@@ -34,7 +29,7 @@ async def encode(string):
 async def decode(base64_string):
     base64_string = base64_string.strip("=") # links generated before this commit will be having = sign, hence striping them to handle padding errors.
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
-    string_bytes = base64.urlsafe_b64decode(base64_bytes) 
+    string_bytes = base64.urlsafe_b64decode(base64_bytes)
     string = string_bytes.decode("ascii")
     return string
 
@@ -105,6 +100,3 @@ def get_readable_time(seconds: int) -> str:
     time_list.reverse()
     up_time += ":".join(time_list)
     return up_time
-
-
-subscribed = filters.create(is_subscribed)

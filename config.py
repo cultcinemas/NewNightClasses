@@ -27,12 +27,12 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5847742709"))
 #Port
 PORT = os.environ.get("PORT", "8080")
 
-#Database 
+#Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://lajopoc569:suryabhai3699@cluster0.z3mprke.mongodb.net/?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "privatesharefilesdb")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ('FORCE_SUB_CHANNEL', '').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -45,7 +45,7 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
-#Force sub message 
+#Force sub message
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
