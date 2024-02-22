@@ -10,7 +10,7 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6936006796:AAHBnOPICZscmW5rrNAVf0Gn4zYgp0zkqCs")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7067424300:AAGsRKmOiPjzshRJ_0sDe7eSqu4K6SrSdCI")
 
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "28737888"))
@@ -28,11 +28,11 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "1392184089"))
 PORT = os.environ.get("PORT", "8080")
 
 #Database
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://munnabhaiya3699:munna7268@cluster0.rvpqi9a.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "SmartSavingsClubDB")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://srj726811:srj726811@cluster0.rvootx1.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("DATABASE_NAME", "DIGIPODDIDB")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001976708417 -1001824793325').split() if _id and _id.startswith('-100')}
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953 -1001901321632').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -40,13 +40,13 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 5878008646").split()):
+    for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 ").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channels to get files\n\nPlease I Kindly Request Join Both Channels Now</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join This 2 Channels to get files Bitlu vasthayi Join Avvu Fast Ga\n\nPlease I Kindly Request Join Both Channels Now</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
