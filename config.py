@@ -32,12 +32,12 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://srj726811:srj726811@clust
 DB_NAME = os.environ.get("DATABASE_NAME", "DIGIPODDIDB")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953 -1001901321632').split() if _id and _id.startswith('-100')}
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953 -1001901321632 -1001077177769').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI bro join @Science2_0 & @Digipoddi both channels first otherwise videos not comes to you.")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI bro join 1.@Science2_0 2.@Digipoddi & https://t.me/+q97R_ztFeskwMzcx this 3 channels first otherwise videos not comes to you.")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 ").split()):
