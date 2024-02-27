@@ -40,7 +40,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI bro join 1.@Science2_0 2.@Digipoddi & https://t.me/+q97R_ztFeskwMzcx this 3 channels first otherwise videos not comes to you.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 ").split()):
+    for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 5685802336").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
