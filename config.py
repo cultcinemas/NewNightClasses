@@ -32,7 +32,7 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://srj726811:srj726811@clust
 DB_NAME = os.environ.get("DATABASE_NAME", "DIGIPODDIDB")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953 -1001901321632 -1001077177769').split() if _id and _id.startswith('-100')}
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
