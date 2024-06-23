@@ -45,6 +45,8 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
+AUTO_DELETE_MESSAGE = '❗️❗️❗️IMPORTANT ❗️❗️\n\nThis Files/Videos will be deleted in 10 mins (Due Reports Issues).\n\nPlease Forward this Files/Videos to your Saved Messages Or Any Other Chat And Start Download There'
+
 #Force sub message
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join This Channel to get files Bitlu vasthayi Join Avvu Fast Ga\n\nPlease I Kindly Request Join This Channel Now👇👇👇</b>")
 

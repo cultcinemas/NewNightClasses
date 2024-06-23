@@ -1,13 +1,16 @@
 import asyncio
+
 from pyrogram import Client, filters, __version__
 from pyrogram.enums import ParseMode
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
-from helper_func import is_notsubscribed, decode, get_messages
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, AUTO_DELETE_MESSAGE
 from database.database import add_user, del_user, full_userbase, present_user
+from helper_func import is_notsubscribed, decode, get_messages, auto_delete_message
+
+loop = asyncio.get_event_loop()
 
 
 @Bot.on_message(filters.command('start') & filters.private)
@@ -89,6 +92,7 @@ async def start_command(client: Client, message: Message):
             return
         await temp_msg.delete()
 
+        messages = []
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
@@ -102,14 +106,19 @@ async def start_command(client: Client, message: Message):
                 reply_markup = None
 
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                cmsg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                messages.append(cmsg)
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                cmsg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                messages.append(cmsg)
             except:
                 pass
-        return 
+        del_msg = await message.reply_text(AUTO_DELETE_MESSAGE, quote=True)
+        messages.append(del_msg)
+        loop.create_task(auto_delete_message(messages))
+        return
     else:
         reply_markup = InlineKeyboardMarkup(
             [

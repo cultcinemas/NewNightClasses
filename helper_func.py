@@ -2,9 +2,10 @@ import asyncio
 import base64
 import re
 
-from config import FORCE_SUB_CHANNEL
 from pyrogram import Client, enums
 from pyrogram.errors import FloodWait
+
+from config import FORCE_SUB_CHANNEL
 
 
 async def is_notsubscribed(client: Client, user_id: int):
@@ -26,12 +27,19 @@ async def encode(string):
     base64_string = (base64_bytes.decode("ascii")).strip("=")
     return base64_string
 
+
 async def decode(base64_string):
     base64_string = base64_string.strip("=") # links generated before this commit will be having = sign, hence striping them to handle padding errors.
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
     string_bytes = base64.urlsafe_b64decode(base64_bytes)
     string = string_bytes.decode("ascii")
     return string
+
+
+async def auto_delete_message(messages):
+    await asyncio.sleep(600)
+    await asyncio.gather(*[m.delete() for m in messages if m])
+
 
 async def get_messages(client, message_ids):
     messages = []
@@ -54,6 +62,7 @@ async def get_messages(client, message_ids):
         total_messages += len(temb_ids)
         messages.extend(msgs)
     return messages
+
 
 async def get_message_id(client, message):
     if message.forward_from_chat:

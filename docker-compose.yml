@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  worker:
+    container_name: fstore
+    build: .
+    command: python3 bot.py
+    restart: on-failure
