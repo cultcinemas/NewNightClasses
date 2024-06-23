@@ -19,7 +19,7 @@ APP_ID = int(os.environ.get("APP_ID", "28737888"))
 API_HASH = os.environ.get("API_HASH", "aa9fc525a5e5a837256c1f0b445af447")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001987796987"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001556818224"))
 
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "1392184089"))
@@ -28,11 +28,11 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "1392184089"))
 PORT = os.environ.get("PORT", "8080")
 
 #Database
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://srj726811:srj726811@cluster0.rvootx1.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "DIGIPODDIDB")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://pinkybitlu:pinky7268@cluster0.dizew5m.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("DATABASE_NAME", "NightClasses")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001901321632').split() if _id and _id.startswith('-100')}
+FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953').split() if _id and _id.startswith('-100')}
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
