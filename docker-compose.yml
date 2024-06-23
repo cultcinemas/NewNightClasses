@@ -4,5 +4,5 @@ services:
   worker:
     container_name: fstore
     build: .
-    command: python3 bot.py
+    command: python3 main.py
     restart: on-failure
