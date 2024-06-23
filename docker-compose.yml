@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   worker:
-    container_name: degipoddi
+    container_name: NightClasses
     build: .
     command: python3 main.py
     restart: on-failure
