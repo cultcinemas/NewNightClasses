@@ -29,7 +29,7 @@ PORT = os.environ.get("PORT", "8080")
 
 #Database
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://pinkybitlu:pinky7268@cluster0.dizew5m.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "NightClassesdb")
+DB_NAME = os.environ.get("DATABASE_NAME", "nightclassesdb")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1001032417953').split() if _id and _id.startswith('-100')}
