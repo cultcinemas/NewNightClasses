@@ -51,7 +51,7 @@ AUTO_DELETE_MESSAGE = '❗️❗️❗️IMPORTANT ❗️❗️\n\nThis Files/Vi
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join This Channel to get files Bitlu vasthayi Join Avvu Fast Ga\n\nPlease I Kindly Request Join This Channel Now👇👇👇</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", '\n\n<b>JOIN FOR MORE VIDEOS @DIGIPODDI\n\n<\b>' )
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", '\n\n<b>{filename} {size} {caption} JOIN FOR MORE VIDEOS @DIGIPODDI\n\n<\b>' )
 
 #set True if you want to prevent users from forwarding files from bot
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
