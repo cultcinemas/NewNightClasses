@@ -37,7 +37,7 @@ FORCE_SUB_CHANNEL = {int(_id) for _id in os.environ.get('FORCE_SUB_CHANNEL', '-1
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\n#PAID_PROMOTION 👇✅ Hello Friend Take VIP MEMBERSHIP & ENJOY DIRECT VIDEOS NO LINKS & NO ADS CHECK DEMO NOW https://t.me/+4ZslCNZmfvs4MWNl I bro join 1.@Science2_0 2.@Digipoddi & https://t.me/+q97R_ztFeskwMzcx this 3 channels Unlimited 24/7 🔞Viral Videos🤤.")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI bro join 1.@Science2_0 2.@Digipoddi & https://t.me/+q97R_ztFeskwMzcx this 3 channels Unlimited 24/7 🔞Viral Videos🤤.")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "5452354891 1392184089 5602172369 5685802336").split()):
@@ -45,7 +45,7 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
-AUTO_DELETE_MESSAGE = '❗️❗️❗️IMPORTANT ❗️❗️\n\nThis Files/Videos will be deleted in 10 mins (Due Reports Issues).\n\nPlease Forward this Files/Videos to your Saved Messages Or Any Other Chat And Start Download There'
+AUTO_DELETE_MESSAGE = '#PAID_PROMOTION 👇✅ Hello Friend Take VIP MEMBERSHIP & ENJOY DIRECT VIDEOS NO LINKS & NO ADS CHECK DEMO NOW https://t.me/+4ZslCNZmfvs4MWNl ❗️❗️❗️IMPORTANT ❗️❗️\n\nThis Files/Videos will be deleted in 10 mins (Due Reports Issues).\n\nPlease Forward this Files/Videos to your Saved Messages Or Any Other Chat And Start Download There'
 
 #Force sub message
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join This Channel to get files Bitlu vasthayi Join Avvu Fast Ga\n\nPlease I Kindly Request Join This Channel Now👇👇👇</b>")
