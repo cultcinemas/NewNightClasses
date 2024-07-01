@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, AUTO_DELETE_MESSAGE
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, AUTO_DELETE_MESSAGE_1,AUTO_DELETE_MESSAGE_2
 from database.database import add_user, del_user, full_userbase, present_user
 from helper_func import is_notsubscribed, decode, get_messages, auto_delete_message
 
