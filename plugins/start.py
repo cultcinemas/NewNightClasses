@@ -115,10 +115,14 @@ async def start_command(client: Client, message: Message):
                 msgs.append(cmsg)
             except:
                 pass
-        del_msg = await message.reply_text(AUTO_DELETE_MESSAGE, quote=True)
-        msgs.append(del_msg)
+        # Send auto-delete messages
+        del_msg_1 = await message.reply_text(AUTO_DELETE_MESSAGE_1, quote=True)
+        del_msg_2 = await message.reply_text(AUTO_DELETE_MESSAGE_2, quote=True)
+        msgs.extend([del_msg_1, del_msg_2])
+
         loop.create_task(auto_delete_message(msgs))
         return
+        
     else:
         reply_markup = InlineKeyboardMarkup(
             [
