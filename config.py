@@ -47,7 +47,7 @@ except ValueError:
 
 #Auto-Delete messages
 AUTO_DELETE_MESSAGE_1 = '#PAID_PROMOTION 👇✅\n\nHello Friend Take VIP MEMBERSHIP & ENJOY DIRECT VIDEOS NO #LINKS & NO #ADS CHECK DEMO NOW\n\nhttps://t.me/+4ZslCNZmfvs4MWNl'
-AUTO_DELETE_MESSAGE_2'❗️❗️❗️IMPORTANT ❗️❗️❗️\n\nThis Files/Videos will be deleted in 10 mins (Due Reports Issues).\n\nPlease Forward this Files/Videos to your Saved Messages Or Any Other Chat And Start Download There'
+AUTO_DELETE_MESSAGE_2 = '❗️❗️❗️IMPORTANT ❗️❗️❗️\n\nThis Files/Videos will be deleted in 10 mins (Due Reports Issues).\n\nPlease Forward this Files/Videos to your Saved Messages Or Any Other Chat And Start Download There'
 
 #Force sub message
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join This Channel to get files Bitlu vasthayi Join Avvu Fast Ga\n\nPlease I Kindly Request Join This Channel Now👇👇👇</b>")
